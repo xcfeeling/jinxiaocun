@@ -1,0 +1,39 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.workbuddy.jxc'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.workbuddy.jxc'
+        minSdk 26
+        targetSdk 35
+        versionCode 7
+        versionName '3.3'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        demo {
+            debuggable true
+            applicationIdSuffix '.demo'
+            versionNameSuffix '-demo'
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+        encoding = 'UTF-8'
+    }
+}
